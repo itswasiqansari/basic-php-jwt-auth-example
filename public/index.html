@@ -11,7 +11,7 @@
 
 <body class="text-center">
   <main class="form-signin">
-    <form method="post" action="authenticate.php" id="frmLogin">
+    <form method="post" action="/jwt/basic-php-jwt-auth-example/public/authenticate.php" id="frmLogin">
       <h1 class="h3 mb-3 fw-normal">Login In</h1>
 
       <label for="inputEmail" class="visually-hidden">Email address</label>
@@ -49,7 +49,7 @@
     loginButton.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const res = await fetch('/authenticate.php', {
+      const res = await fetch('/jwt/basic-php-jwt-auth-example/public/authenticate.php', {
         method: 'POST',
         headers: {
           'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
@@ -72,7 +72,7 @@
     });
 
     btnGetResource.addEventListener('click', async (e) => {
-      const res = await fetch('/resource.php', {
+      const res = await fetch('/jwt/basic-php-jwt-auth-example/public/resource.php', {
         headers: {
           'Authorization': `Bearer ${store.JWT}`
         }
